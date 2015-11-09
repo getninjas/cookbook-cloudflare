@@ -77,6 +77,9 @@ class CloudflareClient < CloudFlare::Connection
             if rec['display_name'] == name && rec['zone_name'] == zone
                 result[rec['rec_id']] = rec
             end
+            if name == "@" && rec['display_name'] == zone && rec['zone_name'] == zone
+                result[rec['rec_id']] = rec
+            end
         end
         result
     end

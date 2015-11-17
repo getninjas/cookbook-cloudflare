@@ -1,3 +1,6 @@
+require 'chef/log'
+Chef::Log.level = :debug
+
 class Chef::Provider
 
   # this needs to be done at run time, not compile time

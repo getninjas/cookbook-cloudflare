@@ -6,7 +6,8 @@ class Chef::Provider
 
     chef_gem 'cloudflare' do
       action :nothing
-      version '2.0.3'
+      provider Chef::Provider::Package::Rubygems::SpecificInstall
+      options "-l #{node['cloudflare']['gem']['repo_url']} -b #{node['cloudflare']['gem']['revision']}"
     end.run_action(:install, :immediately)
 
     require 'resolv'

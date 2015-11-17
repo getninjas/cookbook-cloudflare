@@ -29,3 +29,7 @@ default['cloudflare']['threat_control']['disable_cache'] = false
 # statuses
 # For the record, it maps IPs to a hash with the 'status' and 'datetime' keys
 default['cloudflare']['threat_control']['status_cache'] = {}
+
+# Fetch cloudflare gem from github repo instead of rubygems
+default['cloudflare']['gem']['repo_url'] = 'https://github.com/b4k3r/cloudflare'
+default['cloudflare']['gem']['revision'] = '91e7182f983b287f48d1b2aa6614563b6a8394ba'

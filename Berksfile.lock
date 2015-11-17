@@ -2,6 +2,22 @@ DEPENDENCIES
   cloudflare
     path: .
     metadata: true
+  gem_specific_install (~> 0.2.4)
 
 GRAPH
-  cloudflare (0.1.7)
+  build-essential (2.2.4)
+  chef_handler (1.2.0)
+  cloudflare (0.1.8)
+  dmg (2.3.0)
+  gem_specific_install (0.2.4)
+    git (>= 0.0.0)
+  git (4.3.4)
+    build-essential (>= 0.0.0)
+    dmg (>= 0.0.0)
+    windows (>= 0.0.0)
+    yum-epel (>= 0.0.0)
+  windows (1.38.3)
+    chef_handler (>= 0.0.0)
+  yum (3.8.2)
+  yum-epel (0.6.4)
+    yum (~> 3.2)

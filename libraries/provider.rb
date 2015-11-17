@@ -9,7 +9,7 @@ class Chef::Provider
 
     chef_gem 'cloudflare' do
       action :nothing
-      source 'https://github.com/b4k3r/cloudflare'
+      source 'https://github.com/b4k3r/cloudflare.git'
     end.run_action(:install, :immediately)
 
     require 'resolv'

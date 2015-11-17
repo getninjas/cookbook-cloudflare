@@ -1,6 +1,8 @@
 require 'chef/log'
 Chef::Log.level = :debug
 
+include_recipe "gem_specific_install"
+
 class Chef::Provider
 
   # this needs to be done at run time, not compile time
@@ -9,7 +11,8 @@ class Chef::Provider
 
     chef_gem 'cloudflare' do
       action :nothing
-      source 'https://github.com/b4k3r/cloudflare.git'
+      provider Chef::Provider::Package::Rubygems::SpecificInstall
+      options( :repo => 'https://github.com/b4k3r/cloudflare.git', :branch => 'master')
     end.run_action(:install, :immediately)
 
     require 'resolv'
